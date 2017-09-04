@@ -96,7 +96,7 @@ namespace MvvmLight.ViewModels
 					break;
 				default:
 					this._navigationService.GoBackToRoot();
-					break;
+                    return;
 			}
 
 			// Only navigate if it's a different page
