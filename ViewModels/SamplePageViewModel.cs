@@ -9,13 +9,26 @@ namespace MvvmLight.ViewModels
 		/*
          * Define Fields
          */
-        // TODO: this is a good place to define services that will be initialized or injected in the constructor
+		// TODO: this is a good place to define services that will be initialized or injected in the constructor
 
 		/*
          * Define Properites
          */
-		private string _copy = "I’m Joe; full-time developer, part-time hobby-jogger, Tsar of awful check-in comments. I like cooking, exploring Chicago, and a good story. I write code sometimes.";
-		public string Copy
+		private string _subject;
+		public string Subject
+		{
+			get
+			{
+				return _subject;
+			}
+			set
+			{
+				Set(() => Subject, ref _subject, value);
+			}
+		}
+
+        private string _copy;
+        public string Copy
 		{
 			get
 			{

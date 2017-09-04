@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MvvmLight.Views.MenuPage" BindingContext="{Binding Source={StaticResource Locator}, Path=MenuPage}" Icon="{StaticResource MenuIcon}" Title="Menu" BackgroundColor="#FCFCFC">
-    <ListView Grid.Row="1" ItemsSource="{Binding MenuItems}" SeparatorVisibility="None" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" BackgroundColor="Transparent">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MvvmLight.Views.MenuPage" BindingContext="{Binding Source={StaticResource Locator}, Path=MenuPage}" Icon="{StaticResource MenuIcon}" Title="Menu" BackgroundColor="{StaticResource LightGray}">
+    <ListView Grid.Row="1" ItemsSource="{Binding MenuItems}" HasUnevenRows="true" SeparatorVisibility="None" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" BackgroundColor="Transparent">
         <ListView.Header>
-            <StackLayout Padding="10,30,10,10" BackgroundColor="#CDCDCD">
-                <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="Large"/>
+            <StackLayout Padding="10,30,10,10" BackgroundColor="{StaticResource SteelGray}">
+                <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="Large" TextColor="{StaticResource White}" />
             </StackLayout>
         </ListView.Header>
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <Image HeightRequest="50" WidthRequest="50" Source="{Binding Image}" />
-                        <Label Text="{Binding Title}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                    <StackLayout Padding="10,0" Spacing="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Image HeightRequest="50" WidthRequest="50" Source="{Binding Image}" />
+                            <Label HeightRequest="50" Text="{Binding Title}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                        </StackLayout>
+                        <BoxView Style="{StaticResource DividerBoxView}" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

@@ -10,7 +10,7 @@ namespace MvvmLight.ViewModels
 		/*
          * Define Fields
          */
-		// TODO
+		// TODO: this is a good place to define services that will be initialized or injected in the constructor
 
 		/*
          * Define Properties
@@ -74,12 +74,14 @@ namespace MvvmLight.ViewModels
 			{
 				Key = "Home",
 				Title = "Home",
+                Image = "home.png"
 			});
 
 			MenuItems.Add(new NavigationMenuItem()
 			{
 				Key = "Settings",
 				Title = "Settings",
+                Image = "settings.png"
 			});
 		}
 
