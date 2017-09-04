@@ -9,6 +9,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Show Error Dialog" Command="{Binding ShowAlertCommand}"/>
+            <Button Text="Show Action Sheet" Command="{Binding ShowActionSheetCommand}"/>
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

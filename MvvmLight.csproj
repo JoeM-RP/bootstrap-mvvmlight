@@ -50,7 +50,6 @@
     <Compile Include="Views\AppShell.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Startup\IoCConfig.cs" />
-    <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\MenuPageViewModel.cs" />
@@ -71,6 +70,7 @@
       <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\CopyItem.cs" />
+    <Compile Include="Services\DialogService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

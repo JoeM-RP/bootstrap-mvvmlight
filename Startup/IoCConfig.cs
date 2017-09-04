@@ -29,7 +29,7 @@ namespace MvvmLight.Startup
 
 		public void RegisterServices()
 		{
-            //TODO:
+            SimpleIoc.Default.Register<IDialogService>(() => new DialogService());
 		}
 
 		/// <summary>

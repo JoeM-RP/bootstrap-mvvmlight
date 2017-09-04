@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using MvvmLight.Models;
 using MvvmLight.Services;
@@ -9,10 +10,10 @@ namespace MvvmLight.ViewModels
 {
 	public class HomePageViewModel : BaseViewModel
 	{
-		/*
+        /*
          * Define Fields
          */
-		// TODO: this is a good place to define services that will be initialized or injected in the constructor
+        private IDialogService _dialogService;
 
 		/*
          * Define Properites
@@ -50,12 +51,17 @@ namespace MvvmLight.ViewModels
 		/*
          * Define Commands
          */
+        public RelayCommand ShowActionSheetCommand { get; set; }
+        public RelayCommand ShowAlertCommand { get; set; }
         public RelayCommand<CopyItem> SelectItemCommand { get; set; }
 
-		public HomePageViewModel(INavigationService navigationService) : base(navigationService)
+        public HomePageViewModel(INavigationService navigationService, IDialogService dialogService) : base(navigationService)
         {
 			this.Title = "Home";
+            _dialogService = dialogService;
 
+            ShowAlertCommand = new RelayCommand(async () => await ShowAlert());
+            ShowActionSheetCommand = new RelayCommand(async () => await ShowActionSheet());
             SelectItemCommand = new RelayCommand<CopyItem>((param) => Navigate(param));
 
             Init();
@@ -64,6 +70,42 @@ namespace MvvmLight.ViewModels
 		/*
          * Define Methods
          */
+        private async Task ShowAlert()
+        {
+            await _dialogService.ShowError("This is a fake error to demonstrate the alert", "Yikes!", "Cancel", "Retry", response => 
+            {
+                if(response)
+                {
+                    // TODO: If response is true, the user wants to "retry" the action. 
+                    // Do something here to attempt the action again
+                }
+                else
+                {
+                    // TODO: If response is false, the user has canceled the attempted action
+                    // So perform an action here that makes sense; we may want to naviagte to 
+                    // a previous page or just sit idle
+                }
+            });
+        }
+
+        private async Task ShowActionSheet()
+        {
+            await _dialogService.ShowActionSheet("Actions", "Cancel", "Exit", new string[] { "Action1", "Action2" }, response =>
+            {
+                // TODO: Like with the Error Dialog, we want to perform different actions based on the user selection
+                switch(response)
+                {
+                    case("Action1"):
+                    case("Action2"):
+                    default:
+                        _dialogService.ShowMessage($"Selected {response}", "I did it!");
+                        break;
+                }
+
+            });
+
+        }
+
         private void Navigate(CopyItem parameter)
         {
             this._navigationService.NavigateTo(nameof(Views.SamplePage), parameter);
