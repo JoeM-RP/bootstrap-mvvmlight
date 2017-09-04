@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Practices.ServiceLocation;
+using MvvmLight.Services;
+using Xamarin.Forms;
 
 namespace MvvmLight
 {
@@ -8,7 +10,9 @@ namespace MvvmLight
         {
             InitializeComponent();
 
-            MainPage = new MvvmLightPage();
+			var mainPage = new Views.AppShell();
+			((NavigationService)ServiceLocator.Current.GetInstance<INavigationService>()).Initialize((NavigationPage)mainPage.Detail);
+			MainPage = mainPage;
         }
 
         protected override void OnStart()
