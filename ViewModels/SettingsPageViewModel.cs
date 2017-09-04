@@ -77,10 +77,10 @@ namespace MvvmLight.ViewModels
             await Task.Delay(2000).ContinueWith(_ =>
             {
                 IsLoading = false;
-
-                this._navigationService.GoBack();
             });
-            //\
+			//\
+
+			this._navigationService.GoBack();
 
             return true;
         }

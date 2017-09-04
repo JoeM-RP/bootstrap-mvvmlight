@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
+	<color name="CustomHighlight">@android:color/transparent</color>
+	
 	<style name="MyTheme" parent="MyTheme.Base">
 	</style>
 	<!-- Base theme applied no matter what API -->
@@ -10,18 +12,24 @@
 		<item name="windowActionBar">false</item>
 		<!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
 		<!-- colorPrimary is used for the default action bar background -->
-		<item name="colorPrimary">#2196F3</item>
+		<item name="colorPrimary">#394A76</item>
 		<!-- colorPrimaryDark is used for the status bar -->
-		<item name="colorPrimaryDark">#1976D2</item>
+		<item name="colorPrimaryDark">#6D6D70</item>
 		<!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-		<item name="colorAccent">#FF4081</item>
+		<item name="colorAccent">#87A3BA</item>
 		<!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
 		<item name="windowActionModeOverlay">true</item>
 		<item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+		<!-- Override -->
+		<item name="android:colorPressedHighlight">@color/CustomHighlight</item>
+		<item name="android:colorLongPressedHighlight">@color/CustomHighlight</item>
+		<item name="android:colorFocusedHighlight">@color/CustomHighlight</item>
+		<item name="android:colorActivatedHighlight">@color/CustomHighlight</item>
+		<item name="android:activatedBackgroundIndicator">@color/CustomHighlight</item>
 	</style>
 	<style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-		<item name="colorAccent">#FF4081</item>
+		<item name="colorAccent">#87A3BA</item>
 	</style>
 </resources>
