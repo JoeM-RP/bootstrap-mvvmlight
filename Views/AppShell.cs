@@ -14,10 +14,13 @@ namespace MvvmLight.Views
 				BarBackgroundColor = Color.FromHex("#394A76"),
 			};
 
-			Master = new MenuPage()
-			{
-				Title = "Menu",
-			};
+            Master = new NavigationPage(new MenuPage())
+            {
+                Title = "Required",
+                Icon = "slideout.png",
+                BarTextColor = Color.White,
+                BarBackgroundColor = Color.FromHex("#87A3BA")
+            };
 		}
 
 		protected override void OnAppearing()

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MvvmLight.Views.MenuPage" BindingContext="{Binding Source={StaticResource Locator}, Path=MenuPage}" Icon="{StaticResource MenuIcon}" Title="Menu" BackgroundColor="{StaticResource LightGray}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MvvmLight.Views.MenuPage" BindingContext="{Binding Source={StaticResource Locator}, Path=MenuPage}" Icon="{StaticResource MenuIcon}" Title="{Binding Title}" BackgroundColor="{StaticResource LightGray}">
     <ListView Grid.Row="1" ItemsSource="{Binding MenuItems}" HasUnevenRows="true" SeparatorVisibility="None" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" BackgroundColor="Transparent">
-        <ListView.Header>
-            <StackLayout Padding="10,30,10,10" BackgroundColor="{StaticResource SteelGray}">
-                <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="Large" TextColor="{StaticResource White}" />
-            </StackLayout>
-        </ListView.Header>
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
