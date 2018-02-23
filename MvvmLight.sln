@@ -1,11 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight", "MvvmLight.csproj", "{48E47B6F-8F13-4CF4-B7DC-B064CA687A48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight", "MvvmLightForms\MvvmLight.csproj", "{48E47B6F-8F13-4CF4-B7DC-B064CA687A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.iOS", "iOS\MvvmLight.iOS.csproj", "{45807501-3579-49AB-8BA9-0CC612F7F48E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.iOS", "MvvmLightForms.iOS\MvvmLight.iOS.csproj", "{45807501-3579-49AB-8BA9-0CC612F7F48E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Droid", "Droid\MvvmLight.Droid.csproj", "{53463373-59D1-4F45-9E21-849549FEB679}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Droid", "MvvmLightForms.Droid\MvvmLight.Droid.csproj", "{53463373-59D1-4F45-9E21-849549FEB679}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

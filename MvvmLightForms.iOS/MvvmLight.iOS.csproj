@@ -109,7 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmLight.csproj">
+    <ProjectReference Include="..\MvvmLightForms\MvvmLight.csproj">
       <Project>{48E47B6F-8F13-4CF4-B7DC-B064CA687A48}</Project>
       <Name>MvvmLight</Name>
     </ProjectReference>
